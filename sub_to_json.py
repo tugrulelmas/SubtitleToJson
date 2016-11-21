@@ -5,6 +5,7 @@ lines = []
 lines.append("[")
 temp= ""
 fileName = sys.argv[1]
+withTime = len(sys.argv) > 2 and sys.argv[2].lower() == "t"
 index = -1
 
 f = codecs.open(fileName, 'r')
@@ -16,8 +17,14 @@ for line in f:
         lines.pop()
         if index > 0:
             lines.append('"},\n')
-			
-        lines.append('{{"Number": {}, "Text": "'.format(temp))
+
+        text = ""
+        if withTime:
+            timeDetails = line.strip().replace(" ", "").replace(",", ":").split("-->")
+            text = '{{"Number": {}, "StartTime": {}, "EndTime": {},"Text": "'.format(temp, timeDetails[0], timeDetails[1])
+	else:		
+            text = '{{"Number": {}, "Text": "'.format(temp)
+        lines.append(text) 
         continue
     
     temp = line.strip().replace('"', '\\"')   
