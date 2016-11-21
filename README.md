@@ -2,7 +2,7 @@
 Converts subtitles to json with removing spaces and time details.
 
 ## Usage
-Run `python sub_to_json.py [subtitle file name]` this code and create json file.
+Run `python sub_to_json.py [subtitle file name]` this code and create a json file.
 
 ##Example
 test.srt:
