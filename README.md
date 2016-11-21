@@ -2,7 +2,7 @@
 Converts subtitles to json with removing spaces and time details.
 
 ## Usage
-Run `python sub_to_json.py [subtitle file name]` this code and create a json file. If you want star and end time, you have to pass `t` parameter after the subtitle's name like this `python sub_to_json.py [subtitle file name] t`
+Run `python sub_to_json.py [subtitle file name]` this code and create a json file. If you want star and end time, you have to pass `t` parameter after the subtitle's name.
 
 ##Example
 test.srt:
@@ -27,7 +27,7 @@ I...
 00:02:06,266 --> 00:02:08,900
 I'm in a dream.
 ```
-test.json which has created with no parameter:
+test.json which has created with `python sub_to_json.py test.srt`:
 ```
 [{"Number": 1, "Text": "Dolores?"},
 {"Number": 2, "Text": "Yes."},
@@ -36,7 +36,7 @@ test.json which has created with no parameter:
 {"Number": 5, "Text": "I'm in a dream."}]
 ```
 
-test.json which has created with `t` parameter:
+test.json which has created with `python sub_to_json.py test.srt t`:
 ```
 [{"Number": 1, "StartTime": 00:01:56:840, "EndTime": 00:01:59:140,"Text": " Dolores?"},
 {"Number": 2, "StartTime": 00:01:59:226, "EndTime": 00:02:00:675,"Text": " Yes."},
