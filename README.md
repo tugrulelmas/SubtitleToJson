@@ -6,7 +6,7 @@ To create json file run the following code. If you want start and end time, you 
 
 `python sub_to_json.py [subtitle file name]`
 
-##Example
+### Example
 test.srt:
 ```
 1
